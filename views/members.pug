@@ -1,0 +1,13 @@
+extends layout
+
+block head
+  script(src='https://www.google.com/recaptcha/api.js' async='' defer='')
+
+block foot
+  script(src='/js/lib/members.js')
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h3 Members
+
+    .members-list
