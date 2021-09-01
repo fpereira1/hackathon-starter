@@ -229,19 +229,6 @@ exports.postUpdatePassword = (req, res, next) => {
 };
 
 /**
- * POST /account/delete
- * Delete user account.
- */
-exports.postDeleteAccount = (req, res, next) => {
-  User.deleteOne({ _id: req.user.id }, (err) => {
-    if (err) { return next(err); }
-    req.logout();
-    req.flash('info', { msg: 'Your account has been deleted.' });
-    res.redirect('/');
-  });
-};
-
-/**
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
  */
